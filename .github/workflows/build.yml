@@ -19,7 +19,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-c-cpp@v3
       - name: Run build-wrapper
         run: |
-          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} make
+          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} g++ -o output 主函数1.cpp 主函数2.cpp SetList.h 顺序表(9.7(1)).h 
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
